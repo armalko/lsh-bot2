@@ -49,7 +49,7 @@ def callback_worker(call):
         f.write(wr + '\n')
         f.close()
         ses = WebParser.authentication(logs=True)
-        WebParser.upload_file(session=ses, path="lsh-bot/", file="predators.txt")
+        WebParser.upload_file(session=ses, path="lsh-bot2/", file="predators.txt")
         
     elif call.data == "chicken" and k == 0:
         bot.send_message(call.message.chat.id, 'Стратегия "курица" успешно выбрана. Участвуйте снова завтра!')
@@ -59,7 +59,7 @@ def callback_worker(call):
         f.write(wr + '\n')
         f.close()
         ses = WebParser.authentication(logs=True)
-        WebParser.upload_file(session=ses, path="lsh-bot/", file="chicks.txt")
+        WebParser.upload_file(session=ses, path="lsh-bot2/", file="chicks.txt")
         
     elif k >= 1:
         bot.send_message(call.message.chat.id, "Много тыкаешь, начинай сначала. /start ?")
