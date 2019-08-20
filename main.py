@@ -1,5 +1,6 @@
 import telebot
 from telebot import types
+from webscript import WebParser
 bot = telebot.TeleBot("957915230:AAGNCcR-iZvs1hvYcZFoyhEBAVkZ8dN5ZFM")
 
 colour = 0
@@ -47,6 +48,9 @@ def callback_worker(call):
         wr = str(name)
         f.write(wr + '\n')
         f.close()
+        ses = WebParser.authentication(logs=True)
+        WebParser.upload_file(session=ses, path="lsh-bot/", file="predators.txt")
+        
     elif call.data == "chicken" and k == 0:
         bot.send_message(call.message.chat.id, 'Стратегия "курица" успешно выбрана. Участвуйте снова завтра!')
         k += 1
@@ -54,6 +58,9 @@ def callback_worker(call):
         wr = str(name)
         f.write(wr + '\n')
         f.close()
+        ses = WebParser.authentication(logs=True)
+        WebParser.upload_file(session=ses, path="lsh-bot/", file="chicks.txt")
+        
     elif k >= 1:
         bot.send_message(call.message.chat.id, "Много тыкаешь, начинай сначала. /start ?")
 
